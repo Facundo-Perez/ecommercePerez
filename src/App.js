@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from "./components/NavBar"
-import ItemListContainer from './components/itemListContainer/itemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Counter from './components/Counter/ItemCount';
 function App() {
   const stock = 10
