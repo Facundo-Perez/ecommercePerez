@@ -5,7 +5,7 @@ import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () =>{
    
-    const [productList , setProductList] = useState([])
+    const [ProductList , setProductList] = useState([])
     
     useEffect(() => {
       
@@ -24,7 +24,7 @@ const ItemListContainer = () =>{
     
     return (
         <>
-            <ItemList lista={productList}/>   
+            <ItemList lista={ProductList}/>   
         </>
     );
 };
