@@ -6,12 +6,20 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 function App() {
   
   return (
+    <BrowserRouter>
+      <NavBar/> 
+        <Routes>
+        
+                  
+         <Route path='/' element= {<ItemListContainer/>}/>
+         <Route path='store' element={<h2>Aqui va la tienda completa</h2>}/>
+         <Route path='detail/:id' element= {<ItemDetailContainer/>}/>
+         <Route path='about' element={<h2>Acerca de Nosotros</h2>}/>
+         <Route path='signin' element={<h2>Iniciar sesion</h2>}/>      
+         <Route path='category/:category' element={<ItemListContainer/>}></Route>
     
-        <div className="App">
-          <NavBar/>          
-          <ItemListContainer/>
-          <ItemDetailContainer/>     
-        </div>
+       </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,21 +1,22 @@
 import Item from "../Item/Item"
+import { NavLink } from "react-router-dom";
 
 const ItemList = ({lista}) => {
-  
     return (
-    <div>
-        {
-        lista.map((product)=>{
-        return(
+        <div>
+         {lista.map((product)=>(
+            <NavLink
+            key={product.id}
+            to={'/detail/' + product.id}
+            style={{textDecoration:'none'}}>
             <Item   
-                key={product.id}
-                title={product.title} 
-                price={product.price} 
-                image={product.image}
-                detail={product.detail}
+                title={product.title}
+                image={product.image} 
+                price={product.price}
+                category={product.category}             
             />
-            );
-        })}
+            </NavLink>
+        ))}
     </div>
   );
 };

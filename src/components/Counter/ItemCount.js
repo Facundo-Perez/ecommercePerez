@@ -8,8 +8,8 @@ const Counter = (props) => {
     const restar = () => items > 0 ? setItems(items -1) : alert('No es posible quitar mas productos.')
   return (
     <>
-    <div>Tengo {items} de productos.</div>
-    <div>Tengo en Stock {props.stock}productos.</div>
+    <div>{items}</div>
+    <div>Stock{props.stock}.</div>
     <button onClick={sumar}>+</button>
     <button onClick={restar}>-</button>
     </>

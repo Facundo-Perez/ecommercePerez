@@ -1,14 +1,25 @@
+import { NavLink } from "react-router-dom"
 import Counter from "../Counter/ItemCount"
-
-const Item = ({title, price, image, detail}) => {
+import './Item.css'
+const Item = ({title, price, image, detail,category}) => {
   const stock = 10
   return (
     <>
-    <img width={'200px'} src={image} alt={title}/>
-    <h2>{title}</h2>
+    <section className="orderCards">
+     <div className="card">
+  <div className="img">
+    <img src={image} alt={title} />
+  </div>
+  <div className="card-text">
+    <h2 >{title}</h2>
+    <div className="price">${price}</div>
+    <div className="tag">{category}</div>
+    <div className="desc">{detail}</div>
     <Counter stock={stock}/>
-    <h3>${price}</h3>
-    <p>{detail}</p>
+    <NavLink className="btn">add to cart</NavLink>
+  </div>
+  </div>
+    </section>
     
     </>
   )
