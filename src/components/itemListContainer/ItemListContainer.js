@@ -9,16 +9,20 @@ const ItemListContainer = () =>{
     const {category} = useParams;
     const [ProductList , setProductList] = useState([])
     
+    
     useEffect(() => {
       
-        getProducts.then((response)=>{
-            setProductList(response)
-        });
+        getProducts
+            .then((response)=>{
+                category ? setProductList(response.filter((product)=> product.category === category)) : setProductList(response);
+        })
+        .catch((error)=> console.log (error));
 
-     }, []);
+     }, [category]);
     
 
     const getProducts =  new Promise((resolve, reject) => {
+
             setTimeout(()=>{
                 resolve(data);
             } , 2000);
@@ -26,7 +30,7 @@ const ItemListContainer = () =>{
     
     return (
         <>
-            <ItemList lista={ProductList}/>   
+            <ItemList lista={ProductList} />
         </>
     );
 };
