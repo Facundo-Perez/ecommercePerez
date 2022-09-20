@@ -16,7 +16,7 @@ const Item = ({title, price, image, detail,category}) => {
     <div className="tag">{category}</div>
     <div className="desc">{detail}</div>
     <Counter stock={stock}/>
-    <NavLink className="btn">add to cart</NavLink>
+    <NavLink className="btn">Añadir al carrito</NavLink>
   </div>
   </div>
     </section>

@@ -9,7 +9,6 @@ const Counter = (props) => {
   return (
     <>
     <div>{items}</div>
-    <div>Stock{props.stock}.</div>
     <button onClick={sumar}>+</button>
     <button onClick={restar}>-</button>
     </>
