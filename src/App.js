@@ -3,9 +3,11 @@ import {BrowserRouter , Routes , Route} from 'react-router-dom'
 import NavBar from "./components/NavBar"
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import {CartProvider} from './context/CartProvider'
 function App() {
   
   return (
+    <CartProvider>
     <BrowserRouter>
       <NavBar/> 
         <Routes>
@@ -20,6 +22,7 @@ function App() {
          <Route path='cart' element={<h2>Este es tu carrito de compras</h2>}></Route>
        </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 
