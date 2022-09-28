@@ -8,14 +8,14 @@ const ItemDetail = ({detalle}) => {
   const [items, setItems] = useState(1)
   const {addToCart} = useContext(cartContext)
 
-const onAdd = ( detalle ,cantidad) => {
+const onAdd = ( detalle , items) => {
 
       addToCart(detalle , items);
     }
 
     return (
     <div className="ItemDetail">
-        <img src={detalle.image} alt={detalle.title}/>
+        <img  src={detalle.image} alt={detalle.title}/>
         <h2>{detalle.title}</h2>
         <Counter stock={detalle.cantidad} items={items} setItems={setItems}/>
         <button className="btnAddToCart" onClick={()=> onAdd( {detalle, items} )}>Agregar al carrito</button>

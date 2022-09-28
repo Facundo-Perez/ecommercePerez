@@ -11,7 +11,7 @@ const CartWidget = (detalle) =>{
        <NavLink to={'/cart'}> 
        
        <img className="cartWidget" alt={detalle.nombre} src={carro} />
-       <span style={{borderColor:"black"}}>
+       <span style={{ marginLeft:'20px',backgroundColor:"lightblue" , borderRadius: '999px' , textDecoration:'none' }}>
        {totalProducts() > 0 ? totalProducts() : '0'}
        </span>
        </NavLink>
