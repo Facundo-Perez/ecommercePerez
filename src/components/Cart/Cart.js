@@ -1,9 +1,33 @@
 import { useContext } from "react"
 import { cartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
+import moment from 'moment';
 const Cart = () => {
   const {cart, removeProduct} = useContext(cartContext);
-    console.log('cart', cart)
+  const createOrder = () =>{
+    const db = getFirestore();
+    const order = {
+      buyer: {
+        name:'user',
+        phone: '12345',
+        email: 'test@test.com',
+      },
+      items: cart,
+      total: cart.reduce((prev , valorActual) => 
+      prev + valorActual.price * valorActual.cantidad, 
+      0),
+      Date: moment().format()
+    };
+    const queryOrder = collection(db , 'orders');
+    addDoc(queryOrder, order)
+    .then(({id}) =>{
+    console.log(id);
+    alert('Compra realizada.');
+    })
+    .catch((error) => 
+    alert('Error al realizar la compra, intente de nuevo mas tarde.'))
+  }
 
     return (
     <div>
@@ -30,7 +54,9 @@ const Cart = () => {
             </>
         )}
        
-        
+        <div>
+          <button onClick={createOrder}>Crear Orden</button>
+        </div>
     </div>
   )
 }

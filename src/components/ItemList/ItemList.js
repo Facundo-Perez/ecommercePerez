@@ -1,9 +1,9 @@
 import Item from "../Item/Item"
 import { NavLink } from "react-router-dom";
-
+import '../Item/Item.css'
 const ItemList = ({lista}) => {
     return (
-        <div>
+        <div className="orderCards">
          {lista.map((product)=>(
             <NavLink
             key={product.id}

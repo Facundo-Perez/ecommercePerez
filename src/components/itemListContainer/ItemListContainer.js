@@ -31,7 +31,6 @@ const ItemListContainer = () =>{
         else{
             getDocs(querySnapshot)
             .then((res) => {
-            console.log('response',res.docs);
             const data = res.docs.map((doc) => {
                 return {id: doc.id, ...doc.data()};
             });
