@@ -53,9 +53,16 @@ const Cart = () => {
         (
             <>
              {cart.map((product) =>(
-            <div key={product.id} style={{display:'flex', direction:'column', alingItems:'center'}}>
-                <h3>{product.title}</h3>
-                <img src={product.image} alt={product.title}/> 
+            <div 
+            key={product.id} 
+            style={{
+              display:'flex', 
+              direction:'column', 
+              alingItems:'center',
+            }}
+            >
+                <img src={product.image} alt={product.title}/>
+                <h3>{product.title}</h3>                 
                 <p>{product.price}</p>
                 <p>{product.cantidad}</p>
                 <button onClick={()=> removeProduct(product.id)}>Eliminar Producto</button>
