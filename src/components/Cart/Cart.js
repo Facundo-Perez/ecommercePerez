@@ -3,6 +3,7 @@ import { cartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import moment from 'moment';
+import Swal from "sweetalert2";
 const Cart = () => {
   const {cart, removeProduct} = useContext(cartContext);
   const createOrder = () =>{
@@ -23,10 +24,19 @@ const Cart = () => {
     addDoc(queryOrder, order)
     .then(({id}) =>{
     console.log(id);
-    alert('Compra realizada.');
+    Swal.fire(
+      'Compra Realizada con Exito.',
+      `Su numero de orden es ' ${id} ' `  ,
+      'success'
+    )
     })
     .catch((error) => 
-    alert('Error al realizar la compra, intente de nuevo mas tarde.'))
+     Swal.fire({
+      icon: 'error',
+      title: ' :( ',
+      text: 'No se puedo realizar la orden.',
+    })
+    )
   }
 
     return (
