@@ -1,3 +1,27 @@
+# UAV Store
+
+## ECOMMERCE Project in ReactJs
+
+
+
+Este proyecto fue realizado para el curso de React Js de Coderhouse
+
+![alt](./public/images/coder-house.png)
+
+
+![gifecommerce](https://i.makeagif.com/media/10-19-2022/qijpVh.gif)
+
+----
+### Elementos utilizados en el proyecto:
+| Library | Used |
+| ------ | ------ |
+| ReactJS | JavaScript Framework |
+| Create React App | Create React Project |
+| SweetAlert2| Alerts framework |
+| React Router |Router |
+| Firebase | Authentication & DataBase |
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +92,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Author 
+
+ | Perez Facundo.
+ 
