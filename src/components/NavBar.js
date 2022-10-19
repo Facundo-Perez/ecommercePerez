@@ -6,7 +6,7 @@ const navBar = () => {
     <div>
     <div className="header">
         <div className="logo">
-            <NavLink to={'/'}> <img src="../img/Mountain.png" alt="Logo de la marca"></img> </NavLink>  
+            <NavLink to={'/'}> <img src="../public/images/logo-de-marca.jpg" alt="Logo de la marca"></img> </NavLink>  
         </div>
         
         <nav className="navegacion">
