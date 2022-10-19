@@ -6,6 +6,8 @@ import moment from 'moment';
 import Swal from "sweetalert2";
 const Cart = () => {
   const {cart, removeProduct} = useContext(cartContext);
+  console.log('cart', cart);
+
   const createOrder = () =>{
     const db = getFirestore();
     const order = {
@@ -42,38 +44,27 @@ const Cart = () => {
     return (
     <div>
         <h2>Carrito</h2>
+        
         <br></br>
-        {cart.length === 0 ? (
-        <div>
-        <h2>Carrito vacio</h2>
-        <Link to='/'><button>Volver a comprar</button></Link>
-        </div>
-        )
-        :
-        (
-            <>
-             {cart.map((product) =>(
-            <div 
-            key={product.id} 
-            style={{
-              display:'flex', 
-              direction:'column', 
-              alingItems:'center',
-            }}
-            >
-                <img src={product.image} alt={product.title}/>
-                <h3>{product.title}</h3>                 
-                <p>{product.price}</p>
+        
+        {cart.length === 0 ? (<div><h2>Carrito vacio</h2><Link to='/'><button>Volver a comprar</button></Link></div>): 
+        
+        cart.map((product) =>(
+            <div key={product.id} >
+                <h3>{product.title}</h3>
+                <img src={product.image} alt={product.title}/>                 
+                <p> $ {product.price}</p>
                 <p>{product.cantidad}</p>
                 <button onClick={()=> removeProduct(product.id)}>Eliminar Producto</button>
+            <div>
+              <button onClick={createOrder}>Crear Orden</button>
             </div>
-         ))}
-            </>
-        )}
+            </div>
+         ))
+            
+        }
        
-        <div>
-          <button onClick={createOrder}>Crear Orden</button>
-        </div>
+        
     </div>
   )
 }

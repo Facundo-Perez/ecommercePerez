@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+
 import './Item.css'
 const Item = ({title, price, image, detail,category}) => {
 
@@ -10,11 +10,11 @@ const Item = ({title, price, image, detail,category}) => {
     <img src={image} alt={title} />
   </div>
   <div className="card-text">
-    <h2 >{title}</h2>
+    
     <div className="price">${price}</div>
     <div className="tag">{category}</div>
     <div className="desc">{detail}</div>
-    <NavLink className="btn">Añadir al carrito</NavLink>
+    <div className="btn"><h2 >{title}</h2></div>
   </div>
   </div>
     </section>
